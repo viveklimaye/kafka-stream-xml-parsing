@@ -1,0 +1,35 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ExamResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StudentInfo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:int" name="id" />
+							<xs:element type="xs:string" name="givenName" />
+							<xs:element type="xs:string" name="middleName" />
+							<xs:element type="xs:string" name="LastName" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Subjects">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Subject" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="code" />
+										<xs:element type="xs:string" name="name" />
+										<xs:element type="xs:int" name="marksObtained" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
