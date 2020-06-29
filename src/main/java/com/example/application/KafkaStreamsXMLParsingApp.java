@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Bean;
 import com.example.models.BaseModel;
 import com.example.models.ResultInfoModel;
 import com.example.models.StudentInfoModel;
+import com.example.myschema.ExamResult;
+import com.example.parsing.ModelParser;
 
 @SpringBootApplication
 public class KafkaStreamsXMLParsingApp {
@@ -25,6 +27,12 @@ public class KafkaStreamsXMLParsingApp {
 			Predicate<Object, BaseModel> isStudentInfo = (k, v) -> v.getCurrentClassName().equalsIgnoreCase(StudentInfoModel.class.getName());
 			Predicate<Object, BaseModel> isResultInfo =  (k, v) -> v.getCurrentClassName().equalsIgnoreCase(ResultInfoModel.class.getName());
 			
+			ModelParser modelParser = new ModelParser();
+			
+			// ExamResult examResult = modelParser.parseData(value);			
+			// modelParser.getStudentInfoData(examResult);
+			// modelParser.getResultInfoData(examResult);
+		
 			return null;
 			
 		}

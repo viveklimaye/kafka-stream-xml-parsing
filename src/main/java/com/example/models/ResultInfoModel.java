@@ -3,7 +3,7 @@ package com.example.models;
 public class ResultInfoModel extends BaseModel {
 
 	private int studentId;
-	private int subjectCode;
+	private String subjectCode;
 	private String subject;
 	private int marksObtained;
 
@@ -19,11 +19,11 @@ public class ResultInfoModel extends BaseModel {
 		this.studentId = studentId;
 	}
 
-	public int getSubjectCode() {
+	public String getSubjectCode() {
 		return subjectCode;
 	}
 
-	public void setSubjectCode(int subjectCode) {
+	public void setSubjectCode(String subjectCode) {
 		this.subjectCode = subjectCode;
 	}
 
